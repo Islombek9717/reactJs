@@ -1,15 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Student from './Student.jsx';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const students = [
+  {id:1, name: 'Oliver'},
+  {id:2, name: 'Jeck'},
+  {id:3, name: 'Bred'},
+  {id:1, name: 'Oliver'},
+  {id:2, name: 'Jeck'},
+  {id:3, name: 'Bred'},
+  {id:1, name: 'Oliver'},
+  {id:2, name: 'Jeck'},
+  {id:3, name: 'Bred'}
+];
+
+
+ReactDOM.render(
   <React.StrictMode>
-    <App data={{status:'active', title:'React Native'}} />
-    <App title='React' />
-    <App title='Angular' />
-  </React.StrictMode>
+    {students.map((value)=>{
+        return <Student data={value} />;
+      })}
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 
